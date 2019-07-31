@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>star-rating demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../../iron-ajax/iron-ajax.html">
+    <link rel="import" href="../../iron-list/iron-list.html">
+    <link rel="import" href="../../polymer/lib/elements/dom-bind.html">
+    <link rel="import" href="../star-rating.html">
+
+    <custom-style>
+      <style include="demo-pages-shared-styles">
+       .blue {
+         --star-color: blue;
+       }
+      </style>
+    </custom-style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+
+      <h3>Basic star-rating demo</h3>
+      <demo-snippet>
+        <template>
+          <star-rating rating="4" read-only></star-rating>
+        </template>
+      </demo-snippet>
+
+      <h3>Rating with details</h3>
+      <demo-snippet>
+        <template>
+          <star-rating rating="4.7" votes="51" details read-only></star-rating>
+        </template>
+      </demo-snippet>
+
+      <h3>Rating with custom color</h3>
+      <demo-snippet>
+        <template>
+          <star-rating class="blue" rating="4.7" votes="51" details read-only></star-rating>
+        </template>
+      </demo-snippet>
+
+      <h3>Editable star-rating</h3>
+      <demo-snippet>
+        <template>
+          <star-rating rating="2.5"></star-rating>
+        </template>
+      </demo-snippet>
+
+      <h3>Template loading</h3>
+      <demo-snippet>
+        <dom-bind>
+          <template>
+            <iron-ajax url="stars.json" handle-as="json" last-response="{{stars}}" auto></iron-ajax>
+
+            <iron-list items="[[stars]]" as="rating">
+              <template>
+                <star-rating rating="[[rating]]" read-only></star-rating>
+              </template>
+            </iron-list>
+          </template>
+        </dom-bind>
+
+        <!-- duplicated to show source code -->
+        <template>
+          <iron-ajax url="stars.json" handle-as="json" last-response="{{stars}}" auto></iron-ajax>
+
+          <iron-list items="[[stars]]" as="rating">
+            <template>
+              <star-rating rating="[[rating]]" read-only></star-rating>
+            </template>
+          </iron-list>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "@radi-cho/star-rating",
+  "version": "1.0.0",
+  "description": "A five star rating web component.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radi-cho/star-rating.git"
+  },
+  "keywords": [
+    "star",
+    "rating",
+    "web",
+    "components"
+  ],
+  "author": "Radi Cho",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/radi-cho/star-rating/issues"
+  },
+  "homepage": "https://github.com/radi-cho/star-rating#readme"
+}
